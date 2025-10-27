@@ -1,7 +1,7 @@
 # Deployment Guide
 
 ## GitHub Repository
-The code has been pushed to: https://github.com/Shashank4507/bug-bounty-recon-dashboard
+The code has been pushed to: https://github.com/Santhoshpitchai/bug-bounty.git
 
 ## Backend Deployment (Render)
 

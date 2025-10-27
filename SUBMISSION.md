@@ -4,7 +4,7 @@
 A full-stack web application designed for security researchers to manage bug bounty reconnaissance workflows. The application provides a centralized dashboard to track programs, targets, vulnerabilities, and bounty earnings.
 
 ## GitHub Repository
-**URL**: https://github.com/Shashank4507/bug-bounty-recon-dashboard
+**URL**: https://github.com/Santhoshpitchai/bug-bounty.git
 
 ## Technology Stack
 
@@ -184,4 +184,4 @@ MIT
 ---
 
 **Developer**: Built with FastAPI, React, and TailwindCSS
-**Repository**: https://github.com/Shashank4507/bug-bounty-recon-dashboard
+**Repository**: https://github.com/Santhoshpitchai/bug-bounty.git

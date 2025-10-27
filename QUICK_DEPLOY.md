@@ -50,7 +50,7 @@
 Your Bug Bounty Recon Dashboard is now live and accessible via the public URL.
 
 ## 📝 URLs to Submit
-- **GitHub Repository**: https://github.com/Shashank4507/bug-bounty-recon-dashboard
+- **GitHub Repository**: https://github.com/Santhoshpitchai/bug-bounty.git
 - **Live Application**: [Your Netlify URL]
 - **Backend API**: [Your Render URL]
 
