@@ -93,13 +93,13 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-cyan-950 to-slate-900">
       {/* Header */}
-      <header className="bg-black/30 backdrop-blur-md border-b border-purple-500/20">
+      <header className="bg-black/40 backdrop-blur-md border-b border-cyan-500/30">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Shield className="w-8 h-8 text-purple-400" />
+              <Shield className="w-8 h-8 text-cyan-400" />
               <h1 className="text-2xl font-bold text-white">Bug Bounty Recon Dashboard</h1>
             </div>
             <div className="flex space-x-2">
@@ -107,8 +107,8 @@ function App() {
                 onClick={() => setActiveTab('dashboard')}
                 className={`px-4 py-2 rounded-lg transition ${
                   activeTab === 'dashboard'
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:bg-purple-600/20'
+                    ? 'bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-lg shadow-cyan-500/50'
+                    : 'text-gray-300 hover:bg-cyan-600/20'
                 }`}
               >
                 Dashboard
@@ -117,8 +117,8 @@ function App() {
                 onClick={() => setActiveTab('programs')}
                 className={`px-4 py-2 rounded-lg transition ${
                   activeTab === 'programs'
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:bg-purple-600/20'
+                    ? 'bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-lg shadow-cyan-500/50'
+                    : 'text-gray-300 hover:bg-cyan-600/20'
                 }`}
               >
                 Programs
@@ -127,8 +127,8 @@ function App() {
                 onClick={() => setActiveTab('targets')}
                 className={`px-4 py-2 rounded-lg transition ${
                   activeTab === 'targets'
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:bg-purple-600/20'
+                    ? 'bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-lg shadow-cyan-500/50'
+                    : 'text-gray-300 hover:bg-cyan-600/20'
                 }`}
               >
                 Targets
@@ -137,8 +137,8 @@ function App() {
                 onClick={() => setActiveTab('vulnerabilities')}
                 className={`px-4 py-2 rounded-lg transition ${
                   activeTab === 'vulnerabilities'
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:bg-purple-600/20'
+                    ? 'bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-lg shadow-cyan-500/50'
+                    : 'text-gray-300 hover:bg-cyan-600/20'
                 }`}
               >
                 Vulnerabilities
@@ -276,7 +276,7 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
         <h2 className="text-3xl font-bold text-white">Bug Bounty Programs</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition"
+          className="flex items-center space-x-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white px-4 py-2 rounded-lg transition shadow-lg shadow-cyan-500/50"
         >
           <Plus className="w-5 h-5" />
           <span>Add Program</span>
@@ -284,14 +284,14 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="bg-black/30 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+        <form onSubmit={handleSubmit} className="bg-black/40 backdrop-blur-md border border-cyan-500/30 rounded-xl p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
               placeholder="Program Name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             />
             <input
@@ -299,7 +299,7 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
               placeholder="Platform (e.g., HackerOne, Bugcrowd)"
               value={formData.platform}
               onChange={(e) => setFormData({ ...formData, platform: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             />
             <input
@@ -307,14 +307,14 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
               placeholder="Scope"
               value={formData.scope}
               onChange={(e) => setFormData({ ...formData, scope: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
             />
             <input
               type="number"
               placeholder="Max Bounty ($)"
               value={formData.max_bounty}
               onChange={(e) => setFormData({ ...formData, max_bounty: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
             />
           </div>
           <div className="flex justify-end space-x-2 mt-4">
@@ -327,7 +327,7 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition"
+              className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white rounded-lg transition shadow-lg shadow-cyan-500/50"
             >
               Create Program
             </button>
@@ -337,7 +337,7 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {programs.map((program) => (
-          <div key={program.id} className="bg-black/30 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+          <div key={program.id} className="bg-black/40 backdrop-blur-md border border-cyan-500/30 rounded-xl p-6 hover:border-cyan-400/50 transition-all hover:shadow-lg hover:shadow-cyan-500/20">
             <div className="flex justify-between items-start mb-4">
               <h3 className="text-xl font-bold text-white">{program.name}</h3>
               <button
@@ -348,12 +348,12 @@ function Programs({ programs, onDelete, onRefresh, showForm, setShowForm }) {
               </button>
             </div>
             <div className="space-y-2 text-gray-300">
-              <p><span className="text-purple-400">Platform:</span> {program.platform}</p>
-              {program.scope && <p><span className="text-purple-400">Scope:</span> {program.scope}</p>}
+              <p><span className="text-cyan-400 font-semibold">Platform:</span> {program.platform}</p>
+              {program.scope && <p><span className="text-cyan-400 font-semibold">Scope:</span> {program.scope}</p>}
               {program.max_bounty && (
-                <p><span className="text-purple-400">Max Bounty:</span> ${program.max_bounty}</p>
+                <p><span className="text-cyan-400 font-semibold">Max Bounty:</span> ${program.max_bounty}</p>
               )}
-              <p><span className="text-purple-400">Status:</span> {program.status}</p>
+              <p><span className="text-cyan-400 font-semibold">Status:</span> {program.status}</p>
             </div>
           </div>
         ))}
@@ -396,7 +396,7 @@ function Targets({ targets, programs, onDelete, onRefresh, showForm, setShowForm
         <h2 className="text-3xl font-bold text-white">Recon Targets</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition"
+          className="flex items-center space-x-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white px-4 py-2 rounded-lg transition shadow-lg shadow-cyan-500/50"
         >
           <Plus className="w-5 h-5" />
           <span>Add Target</span>
@@ -404,12 +404,12 @@ function Targets({ targets, programs, onDelete, onRefresh, showForm, setShowForm
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="bg-black/30 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+        <form onSubmit={handleSubmit} className="bg-black/40 backdrop-blur-md border border-cyan-500/30 rounded-xl p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <select
               value={formData.program_id}
               onChange={(e) => setFormData({ ...formData, program_id: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             >
               <option value="">Select Program</option>
@@ -422,7 +422,7 @@ function Targets({ targets, programs, onDelete, onRefresh, showForm, setShowForm
               placeholder="Domain (e.g., example.com)"
               value={formData.domain}
               onChange={(e) => setFormData({ ...formData, domain: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             />
             <input
@@ -430,20 +430,20 @@ function Targets({ targets, programs, onDelete, onRefresh, showForm, setShowForm
               placeholder="IP Address"
               value={formData.ip_address}
               onChange={(e) => setFormData({ ...formData, ip_address: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
             />
             <input
               type="text"
               placeholder="Tech Stack"
               value={formData.tech_stack}
               onChange={(e) => setFormData({ ...formData, tech_stack: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
             />
             <textarea
               placeholder="Notes"
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 md:col-span-2"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition md:col-span-2"
               rows="3"
             />
           </div>
@@ -457,7 +457,7 @@ function Targets({ targets, programs, onDelete, onRefresh, showForm, setShowForm
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition"
+              className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white rounded-lg transition shadow-lg shadow-cyan-500/50"
             >
               Create Target
             </button>
@@ -480,10 +480,10 @@ function Targets({ targets, programs, onDelete, onRefresh, showForm, setShowForm
                 </button>
               </div>
               <div className="space-y-2 text-gray-300">
-                {program && <p><span className="text-purple-400">Program:</span> {program.name}</p>}
-                {target.ip_address && <p><span className="text-purple-400">IP:</span> {target.ip_address}</p>}
-                {target.tech_stack && <p><span className="text-purple-400">Tech:</span> {target.tech_stack}</p>}
-                {target.notes && <p><span className="text-purple-400">Notes:</span> {target.notes}</p>}
+                {program && <p><span className="text-cyan-400 font-semibold">Program:</span> {program.name}</p>}
+                {target.ip_address && <p><span className="text-cyan-400 font-semibold">IP:</span> {target.ip_address}</p>}
+                {target.tech_stack && <p><span className="text-cyan-400 font-semibold">Tech:</span> {target.tech_stack}</p>}
+                {target.notes && <p><span className="text-cyan-400 font-semibold">Notes:</span> {target.notes}</p>}
               </div>
             </div>
           )
@@ -551,7 +551,7 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
         <h2 className="text-3xl font-bold text-white">Vulnerabilities</h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition"
+          className="flex items-center space-x-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white px-4 py-2 rounded-lg transition shadow-lg shadow-cyan-500/50"
         >
           <Plus className="w-5 h-5" />
           <span>Add Vulnerability</span>
@@ -559,12 +559,12 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="bg-black/30 backdrop-blur-md border border-purple-500/20 rounded-xl p-6">
+        <form onSubmit={handleSubmit} className="bg-black/40 backdrop-blur-md border border-cyan-500/30 rounded-xl p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <select
               value={formData.target_id}
               onChange={(e) => setFormData({ ...formData, target_id: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             >
               <option value="">Select Target</option>
@@ -577,13 +577,13 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
               placeholder="Vulnerability Title"
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             />
             <select
               value={formData.severity}
               onChange={(e) => setFormData({ ...formData, severity: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             >
               <option value="critical">Critical</option>
@@ -597,13 +597,13 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
               placeholder="Type (e.g., XSS, SQLi, IDOR)"
               value={formData.vulnerability_type}
               onChange={(e) => setFormData({ ...formData, vulnerability_type: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
               required
             />
             <select
               value={formData.status}
               onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
             >
               <option value="draft">Draft</option>
               <option value="reported">Reported</option>
@@ -616,13 +616,13 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
               placeholder="Bounty Amount ($)"
               value={formData.bounty_amount}
               onChange={(e) => setFormData({ ...formData, bounty_amount: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition"
             />
             <textarea
               placeholder="Description"
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              className="bg-slate-800/50 border border-purple-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 md:col-span-2"
+              className="bg-slate-800/50 border border-cyan-500/30 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/50 outline-none transition md:col-span-2"
               rows="4"
             />
           </div>
@@ -636,7 +636,7 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition"
+              className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white rounded-lg transition shadow-lg shadow-cyan-500/50"
             >
               Create Vulnerability
             </button>
@@ -659,14 +659,14 @@ function Vulnerabilities({ vulnerabilities, targets, onDelete, onRefresh, showFo
                     </span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
-                    {target && <p><span className="text-purple-400">Target:</span> {target.domain}</p>}
-                    <p><span className="text-purple-400">Type:</span> {vuln.vulnerability_type}</p>
-                    <p><span className="text-purple-400">Status:</span> {vuln.status}</p>
+                    {target && <p><span className="text-cyan-400 font-semibold">Target:</span> {target.domain}</p>}
+                    <p><span className="text-cyan-400 font-semibold">Type:</span> {vuln.vulnerability_type}</p>
+                    <p><span className="text-cyan-400 font-semibold">Status:</span> {vuln.status}</p>
                     {vuln.bounty_amount && (
-                      <p><span className="text-purple-400">Bounty:</span> ${vuln.bounty_amount}</p>
+                      <p><span className="text-cyan-400 font-semibold">Bounty:</span> ${vuln.bounty_amount}</p>
                     )}
                     {vuln.description && (
-                      <p className="md:col-span-2"><span className="text-purple-400">Description:</span> {vuln.description}</p>
+                      <p className="md:col-span-2"><span className="text-cyan-400 font-semibold">Description:</span> {vuln.description}</p>
                     )}
                   </div>
                 </div>
